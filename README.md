@@ -117,9 +117,18 @@ code — worth keeping in mind for future FSM/bus-protocol designs:
 - **Counters need explicit resets on every path that starts a new phase**, not
   just the global `reset`. A `count_data` that only resets on `reset` (and not
   on entering a new transaction) can carry a stale value forward if any
+
+  
   earlier transaction is cut short, corrupting the next one's data alignment.
 
 All of the above were caught and confirmed by running the design through
+
+Author
+Yash Gawner
+
+Electronics and Telecommunication Engineering Student
+
+This project is a part of my learning journey in RTL Design, FPGA Development, and VLSI Design.
 Icarus Verilog and comparing expected vs. actual signal traces — reinforcing
 that reading an FSM's code is not a substitute for simulating its actual
 edge-by-edge behavior.
